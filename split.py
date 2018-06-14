@@ -44,9 +44,15 @@ def main(args=None):
     df = pd.DataFrame(dic)
     print (df)
     for key in range(len(dic)):
-        sub_list_file = sorted (dic[key])
-        print (sub_list_file)
-        
+        sub_list_file = sorted (dic[key]) #sorted file of each subject 
+        replace_list_file = dic[key]
+        for f in sub_list_file:
+            index_file= sub_list_file.index(f)
+            for file_name in replace_list_file:
+                if file_name == f:
+                    replace_list_file[replace_list_file.index(file_name)]= index_file
+    dff = pd.DataFrame(dic)
+    print (dff)
 
 
 
